@@ -15,27 +15,16 @@ import time
 # Connect to the Minecraft game
 mc = minecraft.Minecraft.create()
 
-# Define a function to decide if your feet are safe or not
-# This function will be reusable in other programs
-def safeFeet():
-  # Get the players position
-  pos = mc.player.getTilePos()
-  
-  # Get the block directly below your player
-  b = mc.getBlock(pos.x, pos.y-1, pos.z)
+#
 
-  # Is the player safe?
+# Spieleschleife
+while True:  
+  time.sleep(0.5)
+  b = mc.getBlock(pos.x, pos.y-1, pos.z)
+  pos = mc.player.getTilePos()
   if b == block.AIR.id or b == block.WATER_STATIONARY.id or b == block.WATER_FLOWING.id:
     mc.postToChat("not safe")
   else:
     mc.postToChat("safe")
-
-# Game loop
-while True:
-  # Run the game loop once every half a second
-  time.sleep(0.5)
-  # Check if your feet are safe
-  safeFeet()  
-
 # END
   
