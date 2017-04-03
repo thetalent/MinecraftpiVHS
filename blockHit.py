@@ -10,28 +10,16 @@ import time
 mc = minecraft.Minecraft.create()
 
 # Work out the position of the player
-diamond_pos = mc.player.getTilePos()
+x,y,z = mc.player.getTilePos()
 
 # Move the diamond slightly away from the player position
-diamond_pos.x = diamond_pos.x + 1
+x=x-1
 
 # Build a diamond treasure block
-mc.setBlock(diamond_pos.x, diamond_pos.y, diamond_pos.z, block.DIAMOND_BLOCK.id)
+mc.setBlock(x,y,z, block.DIAMOND_BLOCK.id)
 
-# Define a function that checks if the diamond treasure has been hit
-# You can reuse this function in other programs
-def checkHit():
-  # Get a list of hit events that have happened
-  events = mc.events.pollBlockHits()
+
   
-  # Process each event in turn
-  for e in events:
-    # Get the coordinate that the hit happened at
-    pos = e.pos
-    
-    # If the diamond was hit
-    if pos.x == diamond_pos.x and pos.y == diamond_pos.y and pos.z == diamond_pos.z:     
-      mc.postToChat("HIT")
 
 # Game loop
 while True:
@@ -40,7 +28,16 @@ while True:
   time.sleep(1)
   
   # Check to see if the diamond treasure has been hit
-  checkHit()
+  events = mc.events.pollBlockHits()
+  
+  # Process each event in turn
+  for e in events:
+    # Get the coordinate that the hit happened at
+    xevent, yevent,zevent  = e.pos
+    
+    # If the diamond was hit
+    if xevent == x and yevent == y and zevent == z:     
+      mc.postToChat("HIT")
 
 # END
 
