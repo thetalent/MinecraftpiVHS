@@ -1,12 +1,7 @@
-# Adventure 4: blockHit.py
 
-# From the book: "Adventures in Minecraft"
-# written by David Whale and Martin O'Hanlon, Wiley, 2014
-# http://eu.wiley.com/WileyCDA/WileyTitle/productCd-111894691X.html
-#
 # This program senses that a block has been hit.
 
-# Import necessary modules
+# Import  modules
 import mcpi.minecraft as minecraft
 import mcpi.block as block
 import time
