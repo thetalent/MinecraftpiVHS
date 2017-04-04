@@ -20,11 +20,11 @@ mc = minecraft.Minecraft.create()
 # Spieleschleife
 while True:  
   time.sleep(0.5)
-  x,y,z = mc.player.getTilePos()
+  pos = mc.player.getTilePos()
   y=y-1
-  b = mc.getBlock(x,y,z)  
+  b = mc.getBlock(pos.x,pos.y,pos.z)  
   if b == block.AIR.id or b == block.WATER_STATIONARY.id or b == block.WATER_FLOWING.id:
-    mc.setBlock(pos.x, pos.y-1, pos.z, block.GLASS.id)
+    mc.setBlock(pos.x, pos.y, pos.z, block.GLASS.id)
  
 # END
   
