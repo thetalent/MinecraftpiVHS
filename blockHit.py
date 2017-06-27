@@ -35,9 +35,9 @@ while True:
     # Get the coordinate that the hit happened at
     xevent, yevent,zevent  = e.pos
     
-    # If the diamond was hit
-    if xevent == x and yevent == y and zevent == z:     
-      mc.postToChat("HIT")
+    # If the diamond was hit.... just an example
+    #if xevent == x and yevent == y and zevent == z:     
+     #mc.postToChat("HIT")
 
 # END
 
