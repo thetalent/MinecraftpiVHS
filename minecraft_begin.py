@@ -6,3 +6,7 @@ import time
 # Hier verbinden wir uns mit dem Minecraft-Spiel
 mc = Minecraft.create()
 mc.postToChat("Hello world")
+
+# Hier beginnt die Spieleschleife
+while True:
+  pass
