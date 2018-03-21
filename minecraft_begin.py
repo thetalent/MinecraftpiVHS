@@ -1,5 +1,8 @@
 # Hier lernt Python die Minecraft-Befehle
 from mcpi.minecraft import Minecraft
+import mcpi.block as block
+
+
 # Hier lernt Python z.B time.sleep()
 import time
 
