@@ -1,0 +1,13 @@
+#!/usr/bin/env python
+# -*- coding: iso-8859-1 -*-
+from mcpi.minecraft import Minecraft
+
+import feedparser
+import time
+import sys
+mc = Minecraft.create()
+
+d = feedparser.parse('http://www.ndr.de/sport/fussball/index-rss.xml')
+for item in d.entries:
+    mc.postToChat(item.description)
+    time.sleep(10)
